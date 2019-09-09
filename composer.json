@@ -2,7 +2,9 @@
     "name": "jms/twig-js-bundle",
     "type": "symfony-bundle",
     "description": "Integrates twig.js into your Symfony2 application",
-    "keywords": ["templating"],
+    "keywords": [
+        "templating"
+    ],
     "homepage": "http://jmsyst.com/bundles/JMSTwigJsBundle",
     "license": "Apache2",
     "authors": [
@@ -11,13 +13,27 @@
             "email": "schmittjoh@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "github",
+            "no-api": true,
+            "url": "https://github.com/oleg-andreyev/twig.js.git"
+        }
+    ],
     "require": {
-        "php": ">=5.3.2",
-        "jms/twig-js": "~1.0",
-        "symfony/framework-bundle": "~2.0"
+        "php": ">=7.0",
+        "jms/twig-js": "dev-symfony-3.0",
+        "symfony/framework-bundle": "^2.7|^3.0",
+        "symfony/translation": "^2.7|^3.0",
+        "symfony/twig-bridge": "^2.7|^3.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.3"
     },
     "autoload": {
-        "psr-0": { "JMS\\TwigJsBundle": "" }
+        "psr-4": {
+            "JMS\\TwigJsBundle\\": ""
+        }
     },
     "target-dir": "JMS/TwigJsBundle"
 }
