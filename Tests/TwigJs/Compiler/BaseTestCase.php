@@ -6,7 +6,7 @@ use JMS\TwigJsBundle\TwigJs\Compiler\TransFilterCompiler;
 use TwigJs\JsCompiler;
 use Symfony\Bundle\TwigBundle\Extension\AssetsExtension;
 
-abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class BaseTestCase extends TestCase
 {
     protected $env;
     protected $compiler;
