@@ -3,6 +3,7 @@
 namespace JMS\TwigJsBundle\Tests\TwigJs\Compiler;
 
 use JMS\TwigJsBundle\TwigJs\Compiler\TransFilterCompiler;
+use Twig\Loader\ArrayLoader;
 use TwigJs\JsCompiler;
 use Symfony\Bundle\TwigBundle\Extension\AssetsExtension;
 
@@ -13,7 +14,7 @@ abstract class BaseTestCase extends TestCase
 
     protected function compile($source, $name = null)
     {
-        return $this->env->compileSource($source, $name);
+        return $this->env->compileSource(new \Twig_Source($source, $name));
     }
 
     protected function getNodes($source, $name = null)
@@ -23,8 +24,7 @@ abstract class BaseTestCase extends TestCase
 
     protected function setUp()
     {
-        $this->env = $env = new \Twig_Environment();
-        $env->addExtension(new \Twig_Extension_Core());
+        $this->env = $env = new \Twig\Environment(new ArrayLoader());
         $env->setCompiler($this->compiler = new JsCompiler($env));
     }
 }
