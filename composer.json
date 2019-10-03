@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "jms/twig-js": "dev-symfony-3.0",
+        "jms/twig-js": "dev-twig-1.x-latest",
         "symfony/framework-bundle": "^2.7|^3.0",
         "symfony/translation": "^2.7|^3.0",
         "symfony/twig-bridge": "^2.7|^3.0"
