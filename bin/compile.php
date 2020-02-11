@@ -10,7 +10,17 @@ use TwigJs\CompileRequestHandler;
 use TwigJs\JsCompiler;
 use TwigJs\Twig\TwigJsExtension;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+$autoloadFiles = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php'
+];
+
+foreach ($autoloadFiles as $autoloadFile) {
+    if (file_exists($autoloadFile)) {
+        require_once $autoloadFile;
+        break;
+    }
+}
 
 $_SERVER['argv'] = array_merge(array_slice($_SERVER['argv'], 0, 1), ['jms:twig:compile'], array_slice($_SERVER['argv'], 1));
 
